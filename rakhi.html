@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Rakhi</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#211f1c;--white:#eeeae2;--muted:#918c84;--gold:#bd9476;--red:#9d453b;--serif:"Playfair Display",serif;--mono:"DM Mono",monospace}
+body{background:var(--bg);color:var(--white);min-height:100vh}
+a{color:inherit;text-decoration:none}
+.nav{height:80px;padding:0 5vw;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.15)}
+.nav a,.nav div{font:10px var(--mono);letter-spacing:.16em}
+.page{min-height:calc(100vh - 80px);padding:8vh 8vw;display:flex;flex-direction:column}
+.heading{text-align:center;margin-bottom:7vh}
+.eyebrow{font:10px var(--mono);letter-spacing:.2em;color:var(--muted);display:block;margin-bottom:35px}
+.heading h1{font:400 clamp(55px,7vw,100px)/.9 var(--serif);letter-spacing:-.05em}
+.heading h1 em{color:var(--gold)}
+.heading p{font:9px var(--mono);letter-spacing:.2em;color:var(--muted);margin-top:35px}
+.stage{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;min-height:430px}
+.rakhi{cursor:pointer;display:flex;align-items:center;transition:.7s cubic-bezier(.2,.8,.2,1)}
+.rakhi:hover{transform:scale(1.05)}
+.thread{width:130px;height:3px;background:var(--red)}
+.center{width:100px;height:100px;position:relative;display:flex;align-items:center;justify-content:center}
+.petal{position:absolute;width:45px;height:45px;border-radius:50%;background:#b98a65;border:2px solid #d4ad89}
+.p1{transform:translateY(-23px)}.p2{transform:translateY(23px)}
+.p3{transform:translateX(-23px)}.p4{transform:translateX(23px)}
+.p5{transform:rotate(45deg) translate(0,-23px)}
+.p6{transform:rotate(-45deg) translate(0,-23px)}
+.gem{width:38px;height:38px;background:#201e1b;border:2px solid #d6ad86;border-radius:50%;z-index:2;display:flex;align-items:center;justify-content:center;font:18px var(--serif);color:#d6ad86}
+.message{opacity:0;transform:translateY(20px);text-align:center;margin-top:45px;transition:.8s;pointer-events:none}
+.message.show{opacity:1;transform:translateY(0)}
+.message span{font:9px var(--mono);letter-spacing:.2em;color:var(--gold)}
+.message p{font:24px var(--serif);margin-top:15px}
+.bottom{display:flex;justify-content:space-between;border-top:1px solid rgba(255,255,255,.15);padding-top:20px;font:9px var(--mono);letter-spacing:.15em;color:var(--muted)}
+.bottom a{color:var(--white);border-bottom:1px solid;padding-bottom:5px}
+@media(max-width:800px){
+.thread{width:65px}
+.heading h1{font-size:16vw}
+.page{padding:7vh 6vw}
+}
+</style>
+</head>
+
+<body>
+
+<nav class="nav">
+<a href="letter.html">← CHAPTER 03</a>
+<div>CHAPTER 04</div>
+</nav>
+
+<main class="page">
+
+<div class="heading">
+<span class="eyebrow">THE RITUAL</span>
+
+<h1>
+One thread.<br>
+<em>A thousand things.</em>
+</h1>
+
+<p>CLICK THE RAKHI</p>
+</div>
+
+<div class="stage">
+
+<div class="rakhi" id="rakhi">
+
+<div class="thread"></div>
+
+<div class="center">
+<div class="petal p1"></div>
+<div class="petal p2"></div>
+<div class="petal p3"></div>
+<div class="petal p4"></div>
+<div class="petal p5"></div>
+<div class="petal p6"></div>
+<div class="gem">R</div>
+</div>
+
+<div class="thread"></div>
+
+</div>
+
+<div class="message" id="message">
+
+<span>FOR YOU, ALWAYS.</span>
+
+<p>
+No matter how old we get,<br>
+some things don't change.
+</p>
+
+</div>
+
+</div>
+
+<div class="bottom">
+<span>A PROMISE WITHOUT NEEDING TO SAY IT.</span>
+<a href="final.html">FINISH THE STORY →</a>
+</div>
+
+</main>
+
+<script>
+const rakhi=document.getElementById("rakhi");
+const message=document.getElementById("message");
+
+rakhi.addEventListener("click",()=>{
+message.classList.add("show");
+rakhi.style.transform="scale(1.15)";
+
+setTimeout(()=>{
+rakhi.style.transform="scale(1)";
+},500);
+});
+</script>
+
+</body>
+</html>

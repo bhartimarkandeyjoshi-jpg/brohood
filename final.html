@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>For Ritika, Always.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#e8e3da;--ink:#171614;--muted:#77736c;--brown:#9c7761;--serif:"Playfair Display",serif;--mono:"DM Mono",monospace}
+body{background:var(--bg);color:var(--ink);min-height:100vh}
+.page{min-height:100vh;padding:30px 5vw;display:flex;flex-direction:column}
+.top,.bottom{display:flex;justify-content:space-between;font:9px var(--mono);letter-spacing:.15em}
+.content{flex:1;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:8vw;max-width:1200px;width:100%;margin:auto}
+.photo{width:100%;max-width:500px;aspect-ratio:4/5;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.65);transition:1s}
+.photo:hover img{transform:scale(1.03)}
+.eyebrow{font:10px var(--mono);letter-spacing:.2em;color:var(--muted);display:block;margin-bottom:35px}
+.text h1{font:400 clamp(60px,8vw,120px)/.88 var(--serif);letter-spacing:-.06em}
+.text h1 em{display:block;color:var(--brown)}
+.text>p{max-width:350px;color:var(--muted);font:13px/1.8 var(--sans);margin-top:40px}
+.signature{display:flex;justify-content:space-between;max-width:350px;border-top:1px solid rgba(0,0,0,.15);margin-top:50px;padding-top:15px;font:9px var(--mono);color:var(--muted)}
+@media(max-width:800px){
+.content{grid-template-columns:1fr;gap:8vh;padding:8vh 0}
+.photo{max-width:none}
+.text h1{font-size:18vw}
+}
+</style>
+</head>
+
+<body>
+
+<main class="page">
+
+<div class="top">
+<span>R / R</span>
+<span>RAKSHA BANDHAN</span>
+</div>
+
+<div class="content">
+
+<div class="photo">
+<img id="sisterPhoto" src="ritika.jpg" alt="Ritika">
+</div>
+
+<div class="text">
+
+<span class="eyebrow">AND THAT'S IT.</span>
+
+<h1>
+Happy Raksha
+<em>Bandhan.</em>
+</h1>
+
+<p>
+Stay exactly as annoying,
+brilliant and impossible
+as you are.
+</p>
+
+<div class="signature">
+<span>— your brother</span>
+<span>∞</span>
+</div>
+
+</div>
+
+</div>
+
+<div class="bottom">
+<span>MADE WITH WAY TOO MUCH EFFORT</span>
+<span>FOR RITIKA.</span>
+</div>
+
+</main>
+
+<script>
+const photo=document.getElementById("sisterPhoto");
+
+window.addEventListener("mousemove",(e)=>{
+const x=(e.clientX/window.innerWidth-.5)*4;
+const y=(e.clientY/window.innerHeight-.5)*4;
+photo.style.transform=`translate(${x}px,${y}px) scale(1.02)`;
+});
+
+document.addEventListener("mouseleave",()=>{
+photo.style.transform="translate(0,0) scale(1)";
+});
+</script>
+
+</body>
+</html>

@@ -1,119 +1,2841 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Ritika — Raksha Bandhan</title>
+
+<title>For Ritika — Always</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0e0d0c;
+    color:#eee9df;
+    font-family:"Manrope",sans-serif;
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font:inherit;
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
 :root{
---cream:#eeeae2;
---ink:#171614;
---muted:#77736c;
---brown:#9c7761;
---line:rgba(23,22,20,.15);
---serif:"Playfair Display",serif;
---sans:"Manrope",sans-serif;
---mono:"DM Mono",monospace
+
+    --black:#0e0d0c;
+    --black2:#151311;
+
+    --cream:#eee9df;
+    --cream2:#e5dfd4;
+
+    --brown:#b18468;
+    --brown2:#8e6753;
+
+    --muted:#8d8880;
+
+    --line:rgba(238,233,223,.14);
+
+    --serif:"Playfair Display",serif;
+    --sans:"Manrope",sans-serif;
+    --mono:"DM Mono",monospace;
+
 }
-body{background:var(--cream);color:var(--ink);font-family:var(--sans);min-height:100vh;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-.grain{position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:multiply}
-.nav{height:80px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
-.nav-logo,.nav-date{font-family:var(--mono);font-size:10px;letter-spacing:.16em}
-.hero{min-height:calc(100vh - 80px);padding:7vh 8vw 5vh;display:grid;grid-template-columns:1fr .75fr;align-items:center;gap:10vw}
-.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:35px}
-.eyebrow span{display:block;margin-top:6px}
-.hero-title{font-family:var(--serif);font-weight:400;font-size:clamp(75px,11vw,170px);line-height:.82;letter-spacing:-.065em;margin-bottom:50px}
-.hero-title em{display:block;font-weight:400;margin-left:13vw;color:var(--brown)}
-.hero-description{max-width:380px;font-size:13px;line-height:1.8;color:var(--muted);margin-bottom:45px}
-.enter{display:inline-flex;align-items:center;gap:35px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;border-bottom:1px solid var(--ink);padding-bottom:9px;transition:.4s}
-.enter:hover{gap:55px}
-.hero-photo-wrap{position:relative}
-.hero-photo{width:min(430px,100%);aspect-ratio:4/5;overflow:hidden}
-.hero-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.72);transition:1.2s}
-.hero-photo:hover img{transform:scale(1.04)}
-.photo-number{font-family:var(--mono);font-size:9px;position:absolute;top:-25px;right:0;color:var(--muted)}
-.photo-caption{display:flex;justify-content:space-between;width:min(430px,100%);padding-top:13px;font-family:var(--mono);font-size:9px;letter-spacing:.1em}
-.photo-caption span:last-child{color:var(--muted)}
-.bottom-note{position:absolute;bottom:25px;left:5vw;right:5vw;display:flex;justify-content:space-between;font-family:var(--mono);font-size:8px;letter-spacing:.15em;color:var(--muted)}
-.reveal{opacity:0;transform:translateY(30px);animation:reveal .9s cubic-bezier(.2,.7,.2,1) forwards}
-.delay1{animation-delay:.12s}.delay2{animation-delay:.25s}.delay3{animation-delay:.4s}
-@keyframes reveal{to{opacity:1;transform:translateY(0)}}
+
+
+/* =========================================================
+   GRAIN
+========================================================= */
+
+.grain{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+    pointer-events:none;
+
+    opacity:.045;
+
+    background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
+
+}
+
+
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+.progress{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:0%;
+
+    height:3px;
+
+    background:var(--brown);
+
+    z-index:10000;
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:80px;
+
+    padding:0 5vw;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    z-index:100;
+
+    transition:.5s;
+
+}
+
+.nav.scrolled{
+
+    background:rgba(14,13,12,.82);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--line);
+
+}
+
+.logo{
+
+    font-family:var(--mono);
+
+    font-size:11px;
+
+    letter-spacing:.15em;
+
+}
+
+.nav-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:35px;
+
+}
+
+.nav-right a{
+
+    font-family:var(--mono);
+
+    font-size:9px;
+
+    letter-spacing:.16em;
+
+    color:#aaa59c;
+
+    transition:.3s;
+
+}
+
+.nav-right a:hover{
+
+    color:white;
+
+}
+
+.menu-dot{
+
+    width:7px;
+    height:7px;
+
+    background:var(--brown);
+
+    border-radius:50%;
+
+    box-shadow:0 0 20px var(--brown);
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:100vh;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    padding:120px 8vw 70px;
+
+}
+
+.hero-bg{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at 70% 40%,
+        rgba(177,132,104,.18),
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 20% 80%,
+        rgba(120,80,60,.12),
+        transparent 30%
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    gap:8vw;
+
+    align-items:center;
+
+}
+
+.hero-copy{
+
+    max-width:800px;
+
+}
+
+.eyebrow{
+
+    font-family:var(--mono);
+
+    font-size:9px;
+
+    letter-spacing:.25em;
+
+    color:#918b83;
+
+    text-transform:uppercase;
+
+    margin-bottom:35px;
+
+}
+
+.hero-title{
+
+    font-family:var(--serif);
+
+    font-size:clamp(80px,12vw,175px);
+
+    font-weight:400;
+
+    line-height:.78;
+
+    letter-spacing:-.07em;
+
+}
+
+.hero-title span{
+
+    display:block;
+
+}
+
+.hero-title .accent{
+
+    color:var(--brown);
+
+    margin-left:12vw;
+
+    font-style:italic;
+
+}
+
+.hero-sub{
+
+    margin-top:50px;
+
+    max-width:400px;
+
+    color:#9d9890;
+
+    font-size:13px;
+
+    line-height:1.9;
+
+}
+
+.hero-button{
+
+    margin-top:40px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    border-bottom:1px solid #aaa49b;
+
+    padding-bottom:10px;
+
+    font-family:var(--mono);
+
+    font-size:9px;
+
+    letter-spacing:.2em;
+
+    transition:.4s;
+
+}
+
+.hero-button:hover{
+
+    gap:40px;
+
+    color:white;
+
+}
+
+
+/* =========================================================
+   HERO PHOTO
+========================================================= */
+
+.hero-photo-area{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.hero-photo{
+
+    width:min(420px,100%);
+
+    aspect-ratio:4/5;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.hero-photo::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        transparent 60%,
+        rgba(0,0,0,.35)
+    );
+
+}
+
+.hero-photo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    filter:saturate(.65) contrast(.95);
+
+    transform:scale(1.04);
+
+    transition:1.5s cubic-bezier(.2,.7,.2,1);
+
+}
+
+.hero-photo:hover img{
+
+    transform:scale(1.09);
+
+}
+
+.photo-label{
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:20px;
+
+    z-index:3;
+
+    font-family:var(--mono);
+
+    font-size:8px;
+
+    letter-spacing:.15em;
+
+}
+
+
+/* =========================================================
+   FLOATING NUMBER
+========================================================= */
+
+.hero-number{
+
+    position:absolute;
+
+    right:-35px;
+
+    top:50%;
+
+    writing-mode:vertical-rl;
+
+    font-family:var(--mono);
+
+    font-size:8px;
+
+    color:#67625b;
+
+    letter-spacing:.2em;
+
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:35px;
+
+    left:8vw;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    font-family:var(--mono);
+
+    font-size:8px;
+
+    color:#716c65;
+
+    letter-spacing:.15em;
+
+}
+
+.scroll-line{
+
+    width:55px;
+
+    height:1px;
+
+    background:#55514b;
+
+}
+
+
+/* =========================================================
+   INTRO SECTION
+========================================================= */
+
+.intro{
+
+    min-height:100vh;
+
+    background:var(--cream);
+
+    color:var(--black);
+
+    padding:15vh 8vw;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.intro-inner{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:.35fr 1fr;
+
+    gap:8vw;
+
+}
+
+.chapter{
+
+    font-family:var(--mono);
+
+    font-size:9px;
+
+    letter-spacing:.2em;
+
+    color:#77716a;
+
+}
+
+.intro-text{
+
+    max-width:900px;
+
+}
+
+.intro-title{
+
+    font-family:var(--serif);
+
+    font-weight:400;
+
+    font-size:clamp(45px,7vw,100px);
+
+    line-height:.95;
+
+    letter-spacing:-.05em;
+
+}
+
+.intro-title em{
+
+    color:var(--brown2);
+
+}
+
+.intro-description{
+
+    margin-top:55px;
+
+    max-width:600px;
+
+    font-size:15px;
+
+    line-height:2;
+
+    color:#68635d;
+
+}
+
+
+/* =========================================================
+   MEMORY SECTION
+========================================================= */
+
+.memories{
+
+    background:var(--cream);
+
+    color:var(--black);
+
+    padding:0 8vw 15vh;
+
+}
+
+.memory-top{
+
+    border-top:1px solid rgba(0,0,0,.15);
+
+    padding-top:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-family:var(--mono);
+
+    font-size:8px;
+
+    letter-spacing:.15em;
+
+    color:#77716a;
+
+}
+
+.memory-grid{
+
+    margin-top:10vh;
+
+    display:grid;
+
+    grid-template-columns:repeat(12,1fr);
+
+    gap:25px;
+
+}
+
+.memory-photo{
+
+    grid-column:1/8;
+
+}
+
+.memory-photo-box{
+
+    aspect-ratio:4/5;
+
+    overflow:hidden;
+
+}
+
+.memory-photo-box img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    filter:saturate(.6);
+
+    transition:1s;
+
+}
+
+.memory-photo-box:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.memory-caption{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:15px;
+
+    font-family:var(--mono);
+
+    font-size:8px;
+
+    color:#77716a;
+
+}
+
+.memory-text{
+
+    grid-column:9/13;
+
+    align-self:end;
+
+    padding-bottom:15px;
+
+}
+
+.memory-text h3{
+
+    font-family:var(--serif);
+
+    font-size:40px;
+
+    font-weight:400;
+
+    line-height:1;
+
+}
+
+.memory-text p{
+
+    color:#77716a;
+
+    font-size:12px;
+
+    line-height:1.8;
+
+    margin-top:25px;
+
+    max-width:300px;
+
+}
+
+
+/* =========================================================
+   LITTLE THINGS
+========================================================= */
+
+.little-things{
+
+    background:#191715;
+
+    padding:16vh 8vw;
+
+}
+
+.little-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    border-bottom:1px solid var(--line);
+
+    padding-bottom:20px;
+
+}
+
+.little-header span{
+
+    font-family:var(--mono);
+
+    font-size:8px;
+
+    letter-spacing:.18em;
+
+    color:#858078;
+
+}
+
+.little-title{
+
+    font-family:var(--serif);
+
+    font-size:clamp(55px,8vw,110px);
+
+    font-weight:400;
+
+    line-height:.9;
+
+    margin-top:10vh;
+
+    max-width:850px;
+
+}
+
+.little-title em{
+
+    color:var(--brown);
+
+}
+
+.cards{
+
+    margin-top:12vh;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+.card{
+
+    min-height:330px;
+
+    border:1px solid var(--line);
+
+    padding:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    transition:.5s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    background:#211e1b;
+
+    border-color:rgba(177,132,104,.4);
+
+}
+
+.card-number{
+
+    font-family:var(--mono);
+
+    font-size:9px;
+
+    color:#77716a;
+
+}
+
+.card h3{
+
+    font-family:var(--serif);
+
+    font-weight:400;
+
+    font-size:32px;
+
+}
+
+.card p{
+
+    color:#858078;
+
+    font-size:11px;
+
+    line-height:1.8;
+
+    margin-top:15px;
+
+}
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.letter-section{
+
+    background:#e5dfd4;
+
+    color:var(--black);
+
+    padding:15vh 8vw;
+
+}
+
+.letter-container{
+
+    max-width:950px;
+
+    margin:auto;
+
+}
+
+.letter-meta{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-family:var(--mono);
+
+    font-size:8px;
+
+    color:#77716a;
+
+    letter-spacing:.15em;
+
+    margin-bottom:70px;
+
+}
+
+.letter-paper{
+
+    background:#f2ede4;
+
+    padding:8vw;
+
+    box-shadow:0 40px 100px rgba(0,0,0,.08);
+
+    position:relative;
+
+}
+
+.letter-paper::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:30px;
+    bottom:30px;
+    left:30px;
+
+    width:1px;
+
+    background:rgba(0,0,0,.08);
+
+}
+
+.letter-paper h2{
+
+    font:400 25px var(--serif);
+
+    margin-bottom:70px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+}
+
+.letter-body{
+
+    max-width:680px;
+
+    margin:auto;
+
+    font-family:var(--serif);
+
+    font-size:18px;
+
+    line-height:1.9;
+
+}
+
+.letter-body p{
+
+    margin-bottom:32px;
+
+}
+
+.letter-body .big{
+
+    font-size:clamp(28px,4vw,50px);
+
+    line-height:1.15;
+
+    letter-spacing:-.03em;
+
+}
+
+.letter-body .highlight{
+
+    color:var(--brown2);
+
+    font-style:italic;
+
+    font-size:28px;
+
+}
+
+.sign{
+
+    margin-top:70px;
+
+    text-align:right;
+
+    font-style:italic;
+
+}
+
+
+/* =========================================================
+   RAKHI SECTION
+========================================================= */
+
+.rakhi-section{
+
+    min-height:100vh;
+
+    background:
+
+    radial-gradient(
+        circle at center,
+        rgba(177,132,104,.12),
+        transparent 30%
+    ),
+
+    #0e0d0c;
+
+    padding:15vh 8vw;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.rakhi-inner{
+
+    text-align:center;
+
+    width:100%;
+
+}
+
+.rakhi-label{
+
+    font-family:var(--mono);
+
+    font-size:8px;
+
+    letter-spacing:.25em;
+
+    color:#77716a;
+
+}
+
+.rakhi-title{
+
+    font-family:var(--serif);
+
+    font-size:clamp(55px,8vw,110px);
+
+    font-weight:400;
+
+    line-height:.9;
+
+    margin-top:30px;
+
+}
+
+.rakhi-title em{
+
+    color:var(--brown);
+
+}
+
+.rakhi-instruction{
+
+    margin-top:30px;
+
+    font:9px var(--mono);
+
+    color:#77716a;
+
+    letter-spacing:.15em;
+
+}
+
+.rakhi-object{
+
+    margin:80px auto 0;
+
+    width:340px;
+
+    height:160px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    transition:.5s;
+
+}
+
+.rakhi-object:hover{
+
+    transform:scale(1.05);
+
+}
+
+.thread{
+
+    width:110px;
+
+    height:3px;
+
+    background:#913d35;
+
+}
+
+.rakhi-center{
+
+    width:105px;
+
+    height:105px;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.petal{
+
+    position:absolute;
+
+    width:48px;
+
+    height:48px;
+
+    background:#ad805f;
+
+    border:2px solid #d2a37f;
+
+    border-radius:50%;
+
+}
+
+.p1{transform:translateY(-25px)}
+.p2{transform:translateY(25px)}
+.p3{transform:translateX(-25px)}
+.p4{transform:translateX(25px)}
+.p5{transform:rotate(45deg) translateY(-25px)}
+.p6{transform:rotate(-45deg) translateY(-25px)}
+
+.rakhi-gem{
+
+    width:40px;
+    height:40px;
+
+    border-radius:50%;
+
+    background:#161412;
+
+    border:2px solid #d4a37c;
+
+    z-index:3;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font:18px var(--serif);
+
+    color:#d4a37c;
+
+}
+
+.rakhi-message{
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    transition:.8s;
+
+    margin-top:20px;
+
+}
+
+.rakhi-message.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.rakhi-message span{
+
+    font:8px var(--mono);
+
+    letter-spacing:.25em;
+
+    color:var(--brown);
+
+}
+
+.rakhi-message p{
+
+    font:24px var(--serif);
+
+    margin-top:15px;
+
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.final{
+
+    min-height:100vh;
+
+    background:var(--cream);
+
+    color:var(--black);
+
+    padding:8vh 5vw 30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.final-top,
+.final-bottom{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-family:var(--mono);
+
+    font-size:8px;
+
+    letter-spacing:.15em;
+
+    color:#77716a;
+
+}
+
+.final-main{
+
+    flex:1;
+
+    max-width:1200px;
+
+    width:100%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:8vw;
+
+    align-items:center;
+
+}
+
+.final-photo{
+
+    aspect-ratio:4/5;
+
+    overflow:hidden;
+
+}
+
+.final-photo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    filter:saturate(.65);
+
+    transition:1s;
+
+}
+
+.final-photo:hover img{
+
+    transform:scale(1.04);
+
+}
+
+.final-copy h2{
+
+    font:400 clamp(60px,8vw,120px)/.86 var(--serif);
+
+    letter-spacing:-.06em;
+
+}
+
+.final-copy h2 em{
+
+    display:block;
+
+    color:var(--brown);
+
+}
+
+.final-copy p{
+
+    margin-top:40px;
+
+    color:#77716a;
+
+    max-width:330px;
+
+    font-size:13px;
+
+    line-height:1.9;
+
+}
+
+.final-line{
+
+    margin-top:50px;
+
+    border-top:1px solid rgba(0,0,0,.15);
+
+    padding-top:15px;
+
+    max-width:350px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font:9px var(--mono);
+
+    color:#77716a;
+
+}
+
+
+/* =========================================================
+   REVEAL ANIMATIONS
+========================================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+
+        opacity 1s cubic-bezier(.2,.7,.2,1),
+
+        transform 1s cubic-bezier(.2,.7,.2,1);
+
+}
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+.particle{
+
+    position:fixed;
+
+    width:3px;
+
+    height:3px;
+
+    background:var(--brown);
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    opacity:.25;
+
+    z-index:1;
+
+}
+
+
+/* =========================================================
+   CURSOR
+========================================================= */
+
+.cursor{
+
+    position:fixed;
+
+    width:15px;
+    height:15px;
+
+    border:1px solid rgba(255,255,255,.6);
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:10001;
+
+    transform:translate(-50%,-50%);
+
+    transition:
+
+        width .25s,
+
+        height .25s,
+
+        background .25s;
+
+}
+
+.cursor.big{
+
+    width:55px;
+    height:55px;
+
+    background:rgba(177,132,104,.12);
+
+    border-color:var(--brown);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media(max-width:800px){
-.nav{height:65px}
-.hero{min-height:auto;padding:10vh 7vw 12vh;display:flex;flex-direction:column;align-items:flex-start;gap:80px}
-.hero-title{font-size:20vw}
-.hero-title em{margin-left:20vw}
-.hero-photo-wrap,.hero-photo{width:100%}
-.bottom-note{display:none}
+
+    .nav{
+
+        height:65px;
+
+        padding:0 6vw;
+
+    }
+
+    .nav-right a{
+
+        display:none;
+
+    }
+
+    .hero{
+
+        padding:120px 7vw 80px;
+
+        min-height:100svh;
+
+        align-items:flex-start;
+
+    }
+
+    .hero-content{
+
+        grid-template-columns:1fr;
+
+        gap:70px;
+
+    }
+
+    .hero-title{
+
+        font-size:21vw;
+
+    }
+
+    .hero-title .accent{
+
+        margin-left:18vw;
+
+    }
+
+    .hero-sub{
+
+        font-size:12px;
+
+        margin-top:35px;
+
+    }
+
+    .hero-photo{
+
+        width:100%;
+
+        max-width:none;
+
+    }
+
+    .hero-number{
+
+        display:none;
+
+    }
+
+    .scroll-indicator{
+
+        display:none;
+
+    }
+
+    .intro{
+
+        padding:12vh 7vw;
+
+        min-height:auto;
+
+    }
+
+    .intro-inner{
+
+        grid-template-columns:1fr;
+
+        gap:45px;
+
+    }
+
+    .intro-title{
+
+        font-size:14vw;
+
+    }
+
+    .intro-description{
+
+        font-size:13px;
+
+        margin-top:35px;
+
+    }
+
+    .memories{
+
+        padding:0 7vw 12vh;
+
+    }
+
+    .memory-grid{
+
+        display:flex;
+
+        flex-direction:column;
+
+        margin-top:7vh;
+
+    }
+
+    .memory-photo,
+    .memory-text{
+
+        width:100%;
+
+    }
+
+    .memory-text{
+
+        padding:30px 0;
+
+    }
+
+    .memory-text h3{
+
+        font-size:35px;
+
+    }
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+        gap:15px;
+
+        margin-top:8vh;
+
+    }
+
+    .card{
+
+        min-height:250px;
+
+    }
+
+    .little-things{
+
+        padding:12vh 7vw;
+
+    }
+
+    .little-title{
+
+        font-size:15vw;
+
+    }
+
+    .letter-section{
+
+        padding:12vh 6vw;
+
+    }
+
+    .letter-paper{
+
+        padding:15vw 9vw;
+
+    }
+
+    .letter-paper::before{
+
+        left:18px;
+
+    }
+
+    .letter-paper h2{
+
+        margin-bottom:45px;
+
+    }
+
+    .letter-body{
+
+        font-size:16px;
+
+    }
+
+    .letter-body .big{
+
+        font-size:30px;
+
+    }
+
+    .rakhi-section{
+
+        min-height:100svh;
+
+        padding:12vh 6vw;
+
+    }
+
+    .rakhi-title{
+
+        font-size:15vw;
+
+    }
+
+    .rakhi-object{
+
+        width:100%;
+
+        margin-top:60px;
+
+    }
+
+    .thread{
+
+        width:70px;
+
+    }
+
+    .final{
+
+        padding:30px 6vw;
+
+    }
+
+    .final-main{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+        padding:8vh 0;
+
+    }
+
+    .final-photo{
+
+        width:100%;
+
+    }
+
+    .final-copy h2{
+
+        font-size:17vw;
+
+    }
+
+    .final-copy p{
+
+        font-size:12px;
+
+    }
+
+    .cursor{
+
+        display:none;
+
+    }
+
 }
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+
+        animation:none!important;
+
+        transition:none!important;
+
+        scroll-behavior:auto!important;
+
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- =====================================================
+     GLOBAL UI
+===================================================== -->
+
+<div class="progress" id="progress"></div>
+
 <div class="grain"></div>
 
-<nav class="nav">
-<div class="nav-logo">R / R</div>
-<div class="nav-date">AUG · 2026</div>
+<div class="cursor" id="cursor"></div>
+
+
+<!-- =====================================================
+     NAV
+===================================================== -->
+
+<nav class="nav" id="nav">
+
+    <div class="logo">
+        R / R
+    </div>
+
+    <div class="nav-right">
+
+        <a href="#story">
+            STORY
+        </a>
+
+        <a href="#letter">
+            LETTER
+        </a>
+
+        <a href="#rakhi">
+            RAKHI
+        </a>
+
+        <div class="menu-dot"></div>
+
+    </div>
+
 </nav>
 
-<main class="hero">
 
-<div>
-<span class="eyebrow reveal">A little something,<br><span>from your brother.</span></span>
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-<h1 class="hero-title reveal delay1">
-For
-<em>Ritika.</em>
-</h1>
+<section class="hero" id="home">
 
-<p class="hero-description reveal delay2">
-Not another Raksha Bandhan message.
-Just a small corner of the internet
-made especially for you.
-</p>
+    <div class="hero-bg"></div>
 
-<a href="story.html" class="enter reveal delay3">
-<span>ENTER</span>
-<span>↗</span>
-</a>
-</div>
+    <div class="hero-content">
 
-<div class="hero-photo-wrap reveal delay2">
 
-<div class="photo-number">01 / 05</div>
+        <div class="hero-copy reveal">
 
-<div class="hero-photo">
-<img src="ritika.jpg" alt="Ritika">
-</div>
+            <div class="eyebrow">
+                A LITTLE SOMETHING
+                <br>
+                FROM YOUR BROTHER
+            </div>
 
-<div class="photo-caption">
-<span>RITIKA</span>
-<span>my favourite headache.</span>
-</div>
+            <h1 class="hero-title">
 
-</div>
+                <span>
+                    For
+                </span>
 
-</main>
+                <span class="accent">
+                    Ritika.
+                </span>
 
-<div class="bottom-note">
-<span>RAKSHA BANDHAN</span>
-<span>SCROLL TO BEGIN ↓</span>
-</div>
+            </h1>
+
+            <p class="hero-sub">
+
+                I could've sent you a message.
+
+                <br><br>
+
+                But apparently I decided
+                building an entire website
+                was the better idea.
+
+            </p>
+
+            <a href="#story" class="hero-button">
+
+                <span>
+                    BEGIN
+                </span>
+
+                <span>
+                    ↓
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="hero-photo-area reveal">
+
+            <div class="hero-photo">
+
+                <!-- IMPORTANT:
+                     YOUR IMAGE IS PNG
+                -->
+
+                <img
+                    src="./ritika.png"
+                    alt="Ritika"
+                    onerror="this.style.display='none'; this.parentElement.style.background='#25211e';"
+                >
+
+                <div class="photo-label">
+                    RITIKA / 01
+                </div>
+
+            </div>
+
+            <div class="hero-number">
+                RAKSHA BANDHAN · 2026
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="scroll-indicator">
+
+        <div class="scroll-line"></div>
+
+        SCROLL
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="intro" id="story">
+
+    <div class="intro-inner">
+
+        <div class="chapter">
+            CHAPTER 01
+            <br><br>
+            SOMEHOW,
+            <br>
+            WE GREW UP.
+        </div>
+
+
+        <div class="intro-text reveal">
+
+            <h2 class="intro-title">
+
+                Somewhere between
+                the fights,
+
+                <em>
+                    stolen food,
+                </em>
+
+                and blaming each other...
+
+            </h2>
+
+
+            <p class="intro-description">
+
+                You became one of those people
+                I never really had to think about.
+
+                You were just there.
+
+                In the background.
+                In the chaos.
+                In the good days.
+                In the absolutely ridiculous ones.
+
+                And honestly,
+                I think that's what makes
+                having an elder sister special.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MEMORY
+===================================================== -->
+
+<section class="memories">
+
+    <div class="memory-top">
+
+        <span>
+            A FEW THINGS I NEVER SAY
+        </span>
+
+        <span>
+            01 — 03
+        </span>
+
+    </div>
+
+
+    <div class="memory-grid">
+
+
+        <div class="memory-photo reveal">
+
+            <div class="memory-photo-box">
+
+                <img
+                    src="./ritika.png"
+                    alt="Ritika"
+                >
+
+            </div>
+
+            <div class="memory-caption">
+
+                <span>
+                    RITIKA
+                </span>
+
+                <span>
+                    THE ORIGINAL
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="memory-text reveal">
+
+            <h3>
+
+                You're annoying.
+
+                <br>
+
+                But you're
+                <em style="color:#9c7158">
+                    my
+                </em>
+                annoying.
+
+            </h3>
+
+
+            <p>
+
+                Which, unfortunately,
+                means I have to keep you.
+
+                <br><br>
+
+                No returns.
+                No exchanges.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LITTLE THINGS
+===================================================== -->
+
+<section class="little-things">
+
+    <div class="little-header">
+
+        <span>
+            CHAPTER 02
+        </span>
+
+        <span>
+            THE LITTLE THINGS
+        </span>
+
+    </div>
+
+
+    <h2 class="little-title reveal">
+
+        It's not really
+        about the big things.
+
+        <em>
+            It's everything else.
+        </em>
+
+    </h2>
+
+
+    <div class="cards">
+
+
+        <div class="card reveal">
+
+            <div class="card-number">
+                01
+            </div>
+
+            <div>
+
+                <h3>
+                    The advice.
+                </h3>
+
+                <p>
+                    Even when I didn't ask for it.
+                    Especially when I didn't ask for it.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="card-number">
+                02
+            </div>
+
+            <div>
+
+                <h3>
+                    The chaos.
+                </h3>
+
+                <p>
+                    Somehow every normal day
+                    became a story worth remembering.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card reveal">
+
+            <div class="card-number">
+                03
+            </div>
+
+            <div>
+
+                <h3>
+                    The constant.
+                </h3>
+
+                <p>
+                    Things change.
+                    People grow.
+                    Somehow you're still you.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LETTER
+===================================================== -->
+
+<section class="letter-section" id="letter">
+
+
+    <div class="letter-container">
+
+
+        <div class="letter-meta">
+
+            <span>
+                CHAPTER 03 · A LETTER
+            </span>
+
+            <span>
+                FOR RITIKA
+            </span>
+
+        </div>
+
+
+        <div class="letter-paper reveal">
+
+
+            <h2>
+
+                <span>
+                    Dear Ritika,
+                </span>
+
+                <span>
+                    ♡
+                </span>
+
+            </h2>
+
+
+            <div class="letter-body">
+
+
+                <p class="big">
+
+                    I don't think I say this
+                    enough...
+
+                </p>
+
+
+                <p>
+
+                    But having you as my elder sister
+                    is one of those things I know
+                    I'll always be grateful for.
+
+                </p>
+
+
+                <p>
+
+                    We've had our arguments,
+                    stupid fights,
+                    annoying each other for
+                    absolutely no reason...
+
+                </p>
+
+
+                <p>
+
+                    And somehow,
+                    after all of it,
+                    you're still one of the people
+                    I know I can count on.
+
+                </p>
+
+
+                <p>
+
+                    You probably don't realise it,
+
+                    but a lot of the things you do
+                    have quietly stayed with me.
+
+                </p>
+
+
+                <p class="highlight">
+
+                    So this year,
+                    I didn't want to just send
+                    you another message.
+
+                </p>
+
+
+                <p class="big">
+
+                    I wanted to make you something.
+
+                </p>
+
+
+                <p>
+
+                    Something completely unnecessary.
+
+                    <br>
+
+                    Something that took way
+                    more time than it needed to.
+
+                    <br>
+
+                    Something that exists
+                    only because you're my sister.
+
+                </p>
+
+
+                <p>
+
+                    Happy Raksha Bandhan, Ritika.
+
+                </p>
+
+
+                <p class="sign">
+
+                    Your irritating
+                    <br>
+                    younger brother.
+
+                </p>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     RAKHI
+===================================================== -->
+
+<section class="rakhi-section" id="rakhi">
+
+
+    <div class="rakhi-inner">
+
+
+        <div class="rakhi-label">
+            CHAPTER 04 · THE RITUAL
+        </div>
+
+
+        <h2 class="rakhi-title">
+
+            One thread.
+
+            <br>
+
+            <em>
+                A thousand things.
+            </em>
+
+        </h2>
+
+
+        <div class="rakhi-instruction">
+
+            CLICK THE RAKHI
+
+        </div>
+
+
+        <div class="rakhi-object" id="rakhiObject">
+
+
+            <div class="thread"></div>
+
+
+            <div class="rakhi-center">
+
+                <div class="petal p1"></div>
+                <div class="petal p2"></div>
+                <div class="petal p3"></div>
+                <div class="petal p4"></div>
+                <div class="petal p5"></div>
+                <div class="petal p6"></div>
+
+                <div class="rakhi-gem">
+                    R
+                </div>
+
+            </div>
+
+
+            <div class="thread"></div>
+
+
+        </div>
+
+
+        <div class="rakhi-message" id="rakhiMessage">
+
+            <span>
+                FOR YOU, ALWAYS.
+            </span>
+
+            <p>
+
+                No matter how old we get,
+                some things don't change.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
+<section class="final">
+
+
+    <div class="final-top">
+
+        <span>
+            R / R
+        </span>
+
+        <span>
+            RAKSHA BANDHAN · 2026
+        </span>
+
+    </div>
+
+
+    <div class="final-main">
+
+
+        <div class="final-photo reveal">
+
+            <img
+                src="./ritika.png"
+                alt="Ritika"
+            >
+
+        </div>
+
+
+        <div class="final-copy reveal">
+
+
+            <div class="eyebrow">
+                AND THAT'S IT.
+            </div>
+
+
+            <h2>
+
+                Happy Raksha
+
+                <em>
+                    Bandhan.
+                </em>
+
+            </h2>
+
+
+            <p>
+
+                Stay exactly as annoying,
+                brilliant and impossible
+                as you are.
+
+                <br><br>
+
+                Wouldn't have it any other way.
+
+            </p>
+
+
+            <div class="final-line">
+
+                <span>
+                    — YOUR BROTHER
+                </span>
+
+                <span>
+                    ∞
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div class="final-bottom">
+
+        <span>
+            MADE WITH WAY TOO MUCH EFFORT
+        </span>
+
+        <span>
+            FOR RITIKA.
+        </span>
+
+    </div>
+
+
+</section>
+
 
 <script>
-document.addEventListener("DOMContentLoaded",()=>{
-document.body.classList.add("loaded");
+
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+const progress = document.getElementById("progress");
+
+window.addEventListener("scroll",()=>{
+
+    const scrollTop =
+        window.scrollY;
+
+    const height =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    const percent =
+        (scrollTop / height) * 100;
+
+    progress.style.width =
+        percent + "%";
+
 });
+
+
+/* =========================================================
+   NAV BLUR ON SCROLL
+========================================================= */
+
+const nav =
+    document.getElementById("nav");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY > 80){
+
+        nav.classList.add("scrolled");
+
+    }else{
+
+        nav.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+const observer =
+    new IntersectionObserver(
+
+        entries=>{
+
+            entries.forEach(entry=>{
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("visible");
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold:.12
+        }
+
+    );
+
+
+revealElements.forEach(element=>{
+
+    observer.observe(element);
+
+});
+
+
+/* =========================================================
+   RAKHI INTERACTION
+========================================================= */
+
+const rakhi =
+    document.getElementById("rakhiObject");
+
+const rakhiMessage =
+    document.getElementById("rakhiMessage");
+
+
+rakhi.addEventListener("click",()=>{
+
+    rakhiMessage.classList.add("show");
+
+    rakhi.style.transform =
+        "scale(1.18)";
+
+    setTimeout(()=>{
+
+        rakhi.style.transform =
+            "scale(1)";
+
+    },500);
+
+
+    /* tiny particles */
+
+    for(let i=0;i<18;i++){
+
+        createParticle();
+
+    }
+
+});
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+function createParticle(){
+
+    const particle =
+        document.createElement("div");
+
+    particle.className =
+        "particle";
+
+    particle.style.left =
+        "50%";
+
+    particle.style.top =
+        "55%";
+
+    document.body.appendChild(
+        particle
+    );
+
+
+    const angle =
+        Math.random() * Math.PI * 2;
+
+    const distance =
+        80 + Math.random()*180;
+
+
+    const x =
+        Math.cos(angle) * distance;
+
+    const y =
+        Math.sin(angle) * distance;
+
+
+    particle.animate(
+
+        [
+
+            {
+                transform:"translate(0,0)",
+                opacity:.7
+            },
+
+            {
+                transform:
+                `translate(${x}px,${y}px)`,
+                opacity:0
+            }
+
+        ],
+
+        {
+
+            duration:
+                900 + Math.random()*700,
+
+            easing:"cubic-bezier(.2,.7,.2,1)"
+
+        }
+
+    ).onfinish=()=>{
+
+        particle.remove();
+
+    };
+
+}
+
+
+/* =========================================================
+   DESKTOP CUSTOM CURSOR
+========================================================= */
+
+const cursor =
+    document.getElementById("cursor");
+
+
+if(window.innerWidth > 800){
+
+    document.addEventListener(
+        "mousemove",
+        e=>{
+
+            cursor.style.left =
+                e.clientX + "px";
+
+            cursor.style.top =
+                e.clientY + "px";
+
+        }
+    );
+
+
+    const interactive =
+        document.querySelectorAll(
+            "a,button,.rakhi-object,.card,.hero-photo"
+        );
+
+
+    interactive.forEach(element=>{
+
+        element.addEventListener(
+            "mouseenter",
+            ()=>{
+                cursor.classList.add("big");
+            }
+        );
+
+
+        element.addEventListener(
+            "mouseleave",
+            ()=>{
+                cursor.classList.remove("big");
+            }
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   IMAGE PARALLAX
+========================================================= */
+
+const heroImage =
+    document.querySelector(".hero-photo img");
+
+
+window.addEventListener("scroll",()=>{
+
+    if(!heroImage) return;
+
+
+    const rect =
+        heroImage.getBoundingClientRect();
+
+
+    if(
+        rect.top < window.innerHeight &&
+        rect.bottom > 0
+    ){
+
+        const movement =
+            (window.innerHeight/2 - rect.top)
+            * .018;
+
+        heroImage.style.transform =
+            `translateY(${movement}px) scale(1.04)`;
+
+    }
+
+});
+
+
+/* =========================================================
+   PHOTO MOUSE PARALLAX
+========================================================= */
+
+const finalPhoto =
+    document.querySelector(".final-photo img");
+
+
+if(window.innerWidth > 800){
+
+    document.addEventListener(
+        "mousemove",
+        e=>{
+
+            if(!finalPhoto) return;
+
+            const x =
+                (e.clientX/window.innerWidth-.5)*3;
+
+            const y =
+                (e.clientY/window.innerHeight-.5)*3;
+
+            finalPhoto.style.transform =
+                `translate(${x}px,${y}px) scale(1.03)`;
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   SMOOTH ANCHOR
+========================================================= */
+
+document.querySelectorAll(
+    'a[href^="#"]'
+).forEach(link=>{
+
+    link.addEventListener(
+        "click",
+        e=>{
+
+            const target =
+                document.querySelector(
+                    link.getAttribute("href")
+                );
+
+            if(target){
+
+                e.preventDefault();
+
+                target.scrollIntoView({
+                    behavior:"smooth"
+                });
+
+            }
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   IMAGE ERROR CHECK
+========================================================= */
+
+document.querySelectorAll("img").forEach(img=>{
+
+    img.addEventListener("error",()=>{
+
+        console.log(
+            "IMAGE NOT FOUND:",
+            img.src
+        );
+
+    });
+
+});
+
 </script>
+
 
 </body>
 </html>
